@@ -61,12 +61,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/59naga/itako-token.git"
+    "url": "https://github.com/itakojs/itako-token.git"
   },
   "author": "59naga <i59naga@icloud.com> (http://berabou.me/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/59naga/itako-token/issues"
+    "url": "https://github.com/itakojs/itako-token/issues"
   },
-  "homepage": "https://github.com/59naga/itako-token#readme"
+  "homepage": "https://github.com/itakojs/itako-token#readme"
 }
