@@ -32,6 +32,14 @@ export default class Token {
   get meta() {
     return this[META];
   }
+  toJSON() {
+    return {
+      type: this.type,
+      value: this.value,
+      options: this.options,
+      meta: this.meta,
+    };
+  }
 
   /**
   * @method clone

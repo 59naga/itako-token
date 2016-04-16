@@ -44,3 +44,8 @@ test('clone is should be changed meta-information only', (t) => {
   t.true(token.meta.transformer === undefined);
   t.true(clonedToken.meta.transformer === 'johndue');
 });
+
+test('should expose the property at the JSON.stringify', (t) => {
+  const string = JSON.stringify(new Token('text', 'foo'));
+  t.true(string === JSON.stringify({ type: 'text', value: 'foo', options: {}, meta: {} }));
+});
