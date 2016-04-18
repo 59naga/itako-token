@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/itakojs/itako-token/compare/v0.1.0...v0.2.0) (2016-04-18)
+
+
+### Features
+
+* **setOptions:** add spec "setOptions: it should override the duplicate key" ([84e7504](https://github.com/itakojs/itako-token/commit/84e7504))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/itakojs/itako-token/compare/v0.0.0...v0.1.0) (2016-04-16)
 

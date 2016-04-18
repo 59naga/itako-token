@@ -1,7 +1,7 @@
 {
   "name": "itako-token",
   "description": "a text reader token class",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "lib",
   "files": [
     "lib"
