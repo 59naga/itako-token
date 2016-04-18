@@ -1,8 +1,8 @@
 // no dependencies
-const TYPE = Symbol();
-const VALUE = Symbol();
-const OPTS = Symbol();
-const META = Symbol();
+const TYPE = Symbol('type');
+const VALUE = Symbol('value');
+const OPTS = Symbol('options');
+const META = Symbol('meta');
 
 // @class Token
 export default class Token {
@@ -78,6 +78,16 @@ export default class Token {
   */
   setOption(key, value) {
     this[OPTS][key] = value;
+    return this;
+  }
+
+  /**
+  * @method setOptions
+  * @param {object} options - override the options
+  * @returns {this} this
+  */
+  setOptions(options) {
+    this[OPTS] = { ...this[OPTS], ...options };
     return this;
   }
 

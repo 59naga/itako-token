@@ -45,6 +45,15 @@ test('clone is should be changed meta-information only', (t) => {
   t.true(clonedToken.meta.transformer === 'johndue');
 });
 
+test('setOptions: it should override the duplicate key', (t) => {
+  const token = new Token('text', 'foo', { pitch: 1 });
+  token.setOptions({ volume: 0.5, pitch: 2 });
+
+  t.true(Object.keys(token.options).length === 2);
+  t.true(token.options.volume === 0.5);
+  t.true(token.options.pitch === 2);
+});
+
 test('should expose the property at the JSON.stringify', (t) => {
   const string = JSON.stringify(new Token('text', 'foo'));
   t.true(string === JSON.stringify({ type: 'text', value: 'foo', options: {}, meta: {} }));
