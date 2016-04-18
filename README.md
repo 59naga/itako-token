@@ -19,12 +19,48 @@ Itako Token
   </a>
 </p>
 
-> Work in progress
-
 Installation
 ---
 ```bash
 npm install itako-token --save
+```
+
+Usage
+---
+`itako-token` has `type` and `value` and reader `options`.
+
+```js
+import Itako from 'itako';
+import Reader from 'itako-text-reader-speech-synthesis';
+import Token from 'itako-token';
+
+const token = new Token('text', 'greeting', {volume: 1, pitch: 1.5});
+
+// speech-synthesis say "greeting" using option
+new Itako([new Reader]).readToken(read);
+```
+
+API
+---
+each property is read-only., but by performing a `set*` method, can be changed.
+
+## `setType(type)` -> `this`
+## `setValue(value)` -> `this`
+## `setOption(key, value)` -> `this`
+## `setOptions(options)` -> `this`
+## `setMeta(key, value)` -> `this`
+
+## `clone(meta)` -> `token`
+create a new instance using an instance.
+
+```js
+const token = new Token('text', 'greeting', { volume: 1, pitch: 1.5 });
+const clonedToken = token.clone({ cloned: true }).setOptions({ volume: 0.5 });
+
+console.log(JSON.stringify(token));
+// {"type":"text","value":"greeting","options":{"volume":1,"pitch":1.5},"meta":{}}
+console.log(JSON.stringify(clonedToken));
+// {"type":"text","value":"greeting","options":{"volume":0.5,"pitch":1.5},"meta":{"cloned":true}}
 ```
 
 Stacktrace was broken
