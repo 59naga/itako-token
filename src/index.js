@@ -1,9 +1,3 @@
-// no dependencies
-const TYPE = Symbol('type');
-const VALUE = Symbol('value');
-const OPTS = Symbol('options');
-const META = Symbol('meta');
-
 // @class Token
 export default class Token {
   /**
@@ -14,31 +8,10 @@ export default class Token {
   * @param {object} [meta={}] - a token meta information
   */
   constructor(type = 'text', value = null, options = {}, meta = {}) {
-    this[TYPE] = type;
-    this[VALUE] = value;
-    this[OPTS] = { ...options };
-    this[META] = { ...meta };
-  }
-
-  get type() {
-    return this[TYPE];
-  }
-  get value() {
-    return this[VALUE];
-  }
-  get options() {
-    return this[OPTS];
-  }
-  get meta() {
-    return this[META];
-  }
-  toJSON() {
-    return {
-      type: this.type,
-      value: this.value,
-      options: this.options,
-      meta: this.meta,
-    };
+    this.type = type;
+    this.value = value;
+    this.options = { ...options };
+    this.meta = { ...meta };
   }
 
   /**
@@ -56,7 +29,7 @@ export default class Token {
   * @returns {this} this
   */
   setType(type) {
-    this[TYPE] = type;
+    this.type = type;
     return this;
   }
 
@@ -66,7 +39,7 @@ export default class Token {
   * @returns {this} this
   */
   setValue(value) {
-    this[VALUE] = value;
+    this.value = value;
     return this;
   }
 
@@ -77,7 +50,7 @@ export default class Token {
   * @returns {this} this
   */
   setOption(key, value) {
-    this[OPTS][key] = value;
+    this.options[key] = value;
     return this;
   }
 
@@ -87,7 +60,7 @@ export default class Token {
   * @returns {this} this
   */
   setOptions(options) {
-    this[OPTS] = { ...this[OPTS], ...options };
+    this.options = { ...this.options, ...options };
     return this;
   }
 
@@ -98,7 +71,7 @@ export default class Token {
   * @returns {this} this
   */
   setMeta(key, value) {
-    this[META][key] = value;
+    this.meta[key] = value;
     return this;
   }
 }

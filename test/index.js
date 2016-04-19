@@ -1,6 +1,5 @@
 // dependencies
 import test from 'ava';
-import { throws } from 'assert-exception';
 
 // target
 import Token from '../src';
@@ -10,15 +9,6 @@ test('token should be initialized with the text type', (t) => {
   const token = new Token;
   t.true(token.type === 'text');
   t.true(token.value === null);
-});
-
-test('properties should provide getter only', (t) => {
-  const token = new Token('text', 'foo');
-
-  t.true(
-    throws(() => {token.type = 'illegal';})
-    .message === 'Cannot set property type of #<Token> which has only a getter'
-  );
 });
 
 test('should be change the properties via the `set*` method', (t) => {
