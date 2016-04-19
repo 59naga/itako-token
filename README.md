@@ -37,20 +37,33 @@ import Token from 'itako-token';
 const token = new Token('text', 'greeting', {volume: 1, pitch: 1.5});
 
 // speech-synthesis say "greeting" using option
-new Itako([new Reader]).readToken(read);
+new Itako([new Reader]).readToken(token);
 ```
 
 API
 ---
-each property is read-only., but by performing a `set*` method, can be changed.
+
+the class defines the reader type, sentence, and grant information for [itako-readers](https://www.npmjs.com/browse/keyword/itako-reader).
 
 ## `setType(type)` -> `this`
+
+define the type of `reader`. `reader` will ignore the except specific `type`(eg [text-reader](https://www.npmjs.com/browse/keyword/itako-text-reader) ignores the `audio` type).
+
 ## `setValue(value)` -> `this`
+
+define the reader read aloud `value`(eg `text` or `audio file url`).
+
 ## `setOption(key, value)` -> `this`
 ## `setOptions(options)` -> `this`
+
+define the grant information about the read aloud(eg `volume`, `pitch`, `speaker`, etc).
+
 ## `setMeta(key, value)` -> `this`
 
+define the meta information for debug.
+
 ## `clone(meta)` -> `token`
+
 create a new instance using an instance.
 
 ```js
